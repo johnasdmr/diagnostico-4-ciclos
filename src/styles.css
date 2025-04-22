@@ -61,7 +61,377 @@ body {
   opacity: 0.9;
 }
 
-/* Next Steps Section Styles */
+/* Progress Bar Styles */
+.progress-container {
+  margin-bottom: 30px;
+}
+
+.progress-bar {
+  height: 20px;
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  border-radius: 10px;
+  position: relative;
+  transition: var(--transition);
+}
+
+.progress-text {
+  position: absolute;
+  right: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.step-indicator {
+  margin-top: 8px;
+  text-align: right;
+  font-size: 0.9rem;
+  color: var(--grey-dark);
+}
+
+/* Cycle Title Styles */
+.cycle-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cycle-title h2 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--secondary-color);
+  display: inline-block;
+}
+
+/* Question Section Styles */
+.question-section {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.question-text {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.rating-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.rating-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--grey-dark);
+}
+
+.rating-options {
+  display: flex;
+justify-content: space-between;
+}
+
+.rating-option {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--grey-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.rating-option:hover {
+  background-color: var(--grey);
+}
+
+.rating-option.selected {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.prev-button, .next-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.prev-button {
+  background-color: var(--grey);
+  color: var(--text-color);
+}
+
+.prev-button:hover {
+  background-color: var(--grey-dark);
+  color: white;
+}
+
+.next-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.next-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.next-button:disabled {
+  background-color: var(--grey);
+  color: var(--grey-dark);
+  cursor: not-allowed;
+}
+
+/* User Form Styles */
+.user-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.user-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 30px;
+}
+
+.submit-button:hover {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+  transform: translateY(-2px);
+}
+
+.privacy-notice {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  color: var(--grey-dark);
+  text-align: center;
+}
+
+/* Results Dashboard Styles */
+.results-dashboard {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.results-dashboard h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.charts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.radar-chart, .line-chart {
+  flex: 1;
+  min-width: 300px;
+  background-color: var(--grey-light);
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.insights-container {
+  margin-top: 40px;
+}
+
+.insights-container h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.insights-container ul {
+  list-style-position: inside;
+  margin-bottom: 30px;
+}
+
+.insights-container li {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  padding-left: 20px;
+  position: relative;
+}
+
+.insights-container li:before {
+  content: "•";
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+}
+
+/* CTA Container */
+.cta-container {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta-container h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.cta-container p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.cta-button:hover {
+  background-color: white;
+  transform: translateY(-3px);
+}
+
+.timer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.countdown {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 5px;
+  color: var(--secondary-color);
+}
+
+/* Share Container */
+.share-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.share-container h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.share-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-button.whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+
+.share-button.facebook {
+  background-color: #1877F2;
+  color: white;
+}
+
+.share-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Thank You Page Styles */
+.thank-you-page {
+  text-align: center;
+}
+
 .next-steps {
   background-color: white;
   padding: 30px;
@@ -103,64 +473,6 @@ body {
   color: var(--primary-color);
 }
 
-.countdown {
-  display: block;
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-top: 5px;
-  color: var(--secondary-color);
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-weight: 600;
-  margin-top: 20px;
-  transition: var(--transition);
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-.whatsapp-group {
-  margin-top: 30px;
-}
-
-.whatsapp-group h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--primary-color);
-}
-
-.whatsapp-group p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-
-.whatsapp-button {
-  display: inline-block;
-  background-color: #25D366; /* WhatsApp green */
-  color: white;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: var(--transition);
-  font-size: 1.1rem;
-}
-
-.whatsapp-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
   .header h1 {
@@ -170,83 +482,29 @@ body {
   .header p {
     font-size: 1rem;
   }
-
-  .cta-button {
-    width: 100%;
-    padding: 15px 20px;
-  }
-
-  .whatsapp-button {
-    width: 100%;
-    padding: 15px 20px;
-  }
-}
-/* Ajustes para a página de agradecimento */
-.thank-you-page {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.countdown-container {
-  margin: 25px 0;
-  background-color: var(--light-bg);
-  padding: 15px;
-  border-radius: 8px;
-}
-
-.countdown-container h3 {
-  font-size: 1.4rem;
-  color: var(--primary-color);
-  margin-bottom: 10px;
-}
-
-.countdown {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--primary-color);
-}
-
-.whatsapp-group {
-  margin-top: 40px;
-  padding-top: 30px;
-  border-top: 1px solid var(--grey);
-}
-
-.whatsapp-group h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--primary-color);
-  margin-bottom: 15px;
-}
-
-.whatsapp-button {
-  display: inline-block;
-  background-color: #25D366; /* WhatsApp green */
-  color: white;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: var(--transition);
-  font-size: 1.1rem;
-  margin-top: 15px;
-}
-
-.whatsapp-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
-}
-
-/* Responsividade para a página de agradecimento */
-@media (max-width: 600px) {
-  .countdown {
-    font-size: 1rem;
+  
+  .question-text {
+    font-size: 1.1rem;
   }
   
-  .whatsapp-button,
-  .cta-button {
-    display: block;
+  .rating-option {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .charts-container {
+    flex-direction: column;
+  }
+  
+  .radar-chart, .line-chart {
     width: 100%;
+  }
+  
+  .cta-container h3 {
+    font-size: 1.5rem;
+  }
+  
+  .share-buttons {
+    flex-direction: column;
   }
 }
