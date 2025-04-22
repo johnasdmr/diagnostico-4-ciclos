@@ -60,7 +60,7 @@ const ThankYou = ({ userData }) => {
           <p className="countdown">{timeLeft}</p>
         </div>
         
-        
+        <a
           href="https://metodogift.com/"
           className="cta-button"
           target="_blank"
@@ -73,6 +73,7 @@ const ThankYou = ({ userData }) => {
           <h3>Participe do nosso grupo no WhatsApp!</h3>
           <p>Para garantir sua vaga e receber os detalhes, clique abaixo e entre no grupo da live.</p>
           
+          <a
             href={whatsappGroupLink}
             target="_blank"
             rel="noopener noreferrer"
