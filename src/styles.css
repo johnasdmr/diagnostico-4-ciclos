@@ -181,3 +181,72 @@ body {
     padding: 15px 20px;
   }
 }
+/* Ajustes para a página de agradecimento */
+.thank-you-page {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.countdown-container {
+  margin: 25px 0;
+  background-color: var(--light-bg);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.countdown-container h3 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.countdown {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.whatsapp-group {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--grey);
+}
+
+.whatsapp-group h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  background-color: #25D366; /* WhatsApp green */
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 1.1rem;
+  margin-top: 15px;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+
+/* Responsividade para a página de agradecimento */
+@media (max-width: 600px) {
+  .countdown {
+    font-size: 1rem;
+  }
+  
+  .whatsapp-button,
+  .cta-button {
+    display: block;
+    width: 100%;
+  }
+}
