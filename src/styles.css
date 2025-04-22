@@ -707,3 +707,91 @@ body {
   color: var(--primary-color);
   margin-bottom: 10px;
 }
+/* Ajuste para colocar "Relacionamentos" e "Sabedoria" na vertical em dispositivos móveis */
+@media (max-width: 480px) {
+  .radar-chart text[text-anchor="middle"] {
+    /* Esta seleção se aplica aos textos nos eixos do gráfico radar */
+    font-size: 10px; /* Texto menor para caber melhor */
+  }
+  
+  /* Rotacionar especificamente os textos de "Relacionamentos" e "Sabedoria" */
+  .radar-chart text[text-anchor="middle"]:nth-of-type(2),
+  .radar-chart text[text-anchor="middle"]:nth-of-type(4) {
+    transform: rotate(-90deg);
+    transform-origin: center;
+  }
+  
+  /* Ajustar posição se necessário */
+  .radar-chart text[text-anchor="middle"]:nth-of-type(2) {
+    transform-origin: 85% 50%;
+  }
+  
+  .radar-chart text[text-anchor="middle"]:nth-of-type(4) {
+    transform-origin: 15% 50%;
+  }
+}
+
+/* Correção para o "Participe desse evento" - corrigindo contraste */
+.cta-container {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  color: white; /* Garantindo que o texto seja branco para contraste */
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta-container h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: white; /* Garantindo que o texto seja branco */
+}
+
+.cta-container p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  opacity: 0.9;
+  color: white; /* Garantindo que o texto seja branco */
+}
+
+/* Ajuste para o botão CTA para melhorar contraste */
+.cta-button {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: #333; /* Cor escura para contraste com o fundo dourado */
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.cta-button:hover {
+  background-color: white;
+  color: var(--primary-color); /* Cor vermelha ao passar o mouse */
+  transform: translateY(-3px);
+}
+
+/* Ajuste para o contador na seção CTA */
+.countdown-container {
+  margin: 25px 0;
+  background-color: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente para destacar */
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.timer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: white; /* Garantindo que o texto seja branco */
+}
+
+.countdown {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 5px;
+  color: white; /* Mudando para branco para melhor contraste */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Adicionando sombra para destacar */
+}
