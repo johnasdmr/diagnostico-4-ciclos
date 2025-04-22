@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   RadarChart, 
   PolarGrid, 
@@ -16,6 +16,26 @@ import {
 } from 'recharts';
 
 const ResultsDashboard = ({ results, insights }) => {
+  const [timeLeft, setTimeLeft] = useState('');
+  
+  useEffect(() => {
+    const eventDate = new Date('2025-04-25T20:00:00Z'); // Data e hora do evento (25 de Abril às 20h)
+    const interval = setInterval(() => {
+      const now = new Date();
+      const timeDifference = eventDate - now;
+      if (timeDifference <= 0) {
+        clearInterval(interval);
+        setTimeLeft('Evento iniciado!');
+      } else {
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        setTimeLeft(`${days} dias, ${hours} horas, ${minutes} minutos`);
+      }
+    }, 1000); // Atualiza a cada 1 segundo
+    return () => clearInterval(interval); // Limpeza do intervalo quando o componente for desmontado
+  }, []);
+
   // Verifique se os dados estão sendo passados corretamente
   if (!results || !insights) {
     return <div>Carregando os resultados...</div>;
@@ -133,10 +153,12 @@ const ResultsDashboard = ({ results, insights }) => {
             Participar da Aula Master
           </a>
           
-          <p className="timer">
-            <span>Evento começa em:</span>
-            <span className="countdown">3 dias, 2 horas, 45 minutos</span>
-          </p>
+          <div className="countdown-container">
+            <p className="timer">
+              <span>Evento começa em: </span>
+              <span className="countdown">{timeLeft}</span>
+            </p>
+          </div>
         </div>
       </div>
 
