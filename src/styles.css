@@ -661,3 +661,49 @@ body {
     padding: 15px 20px;
   }
 }
+/* Estilos para o botão do WhatsApp no dashboard */
+.whatsapp-group {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--grey);
+  text-align: center;
+}
+
+.whatsapp-group h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  background-color: #25D366; /* WhatsApp green */
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 1.1rem;
+  margin-top: 15px;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+
+/* Estilos para o container da contagem regressiva */
+.countdown-container {
+  margin: 25px 0;
+  background-color: var(--light-bg);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.countdown-container h3 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
