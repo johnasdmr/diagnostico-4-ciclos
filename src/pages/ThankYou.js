@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const ThankYou = ({ userData }) => {
   const [timeLeft, setTimeLeft] = useState('');
-
+  
   useEffect(() => {
     const eventDate = new Date('2025-04-25T20:00:00Z'); // Data e hora do evento
     const interval = setInterval(() => {
@@ -24,6 +24,8 @@ const ThankYou = ({ userData }) => {
 
     return () => clearInterval(interval); // Limpeza do intervalo quando o componente for desmontado
   }, []);
+
+  const whatsappGroupLink = 'http://chat.whatsapp.com/Kpe6j3oYi0pGy9tpDtGs51'; // Link para o grupo do WhatsApp
 
   return (
     <div className="thank-you-page">
@@ -69,6 +71,19 @@ const ThankYou = ({ userData }) => {
         >
           Garantir Minha Vaga
         </a>
+
+        <div className="whatsapp-group">
+          <h3>Participe do nosso grupo no WhatsApp!</h3>
+          <p>Para garantir sua vaga e receber os detalhes, clique abaixo e entre no grupo da live.</p>
+          <a
+            href={whatsappGroupLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whatsapp-button"
+          >
+            Acessar o Grupo do WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   );
