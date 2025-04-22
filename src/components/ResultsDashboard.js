@@ -16,38 +16,46 @@ import {
 } from 'recharts';
 
 const ResultsDashboard = ({ results, insights }) => {
+  // Verifique se os dados estão sendo passados corretamente
+  if (!results || !insights) {
+    return <div>Carregando os resultados...</div>;
+  }
+
   // Format data for radar chart
   const radarData = [
     {
       subject: 'Origem',
-      value: results.cicloOrigem,
+      value: results.cicloOrigem || 0, // Defina um valor padrão para evitar problemas
       fullMark: 100
     },
     {
       subject: 'Relacionamentos',
-      value: results.cicloEscolhidos,
+      value: results.cicloEscolhidos || 0,
       fullMark: 100
     },
     {
       subject: 'Realidade',
-      value: results.cicloRealidade,
+      value: results.cicloRealidade || 0,
       fullMark: 100
     },
     {
       subject: 'Sabedoria',
-      value: results.cicloSabedoria,
+      value: results.cicloSabedoria || 0,
       fullMark: 100
     }
   ];
-  
+
   // Format data for line chart
   const lineData = [
-    { name: 'Origem', value: results.cicloOrigem },
-    { name: 'Relacionamentos', value: results.cicloEscolhidos },
-    { name: 'Realidade', value: results.cicloRealidade },
-    { name: 'Sabedoria', value: results.cicloSabedoria }
+    { name: 'Origem', value: results.cicloOrigem || 0 },
+    { name: 'Relacionamentos', value: results.cicloEscolhidos || 0 },
+    { name: 'Realidade', value: results.cicloRealidade || 0 },
+    { name: 'Sabedoria', value: results.cicloSabedoria || 0 }
   ];
-  
+
+  // WhatsApp Group link
+  const whatsappGroupLink = 'http://chat.whatsapp.com/Kpe6j3oYi0pGy9tpDtGs51'; // Link para o grupo do WhatsApp
+
   return (
     <div className="results-dashboard">
       <h2>Seus Resultados: Os 4 Ciclos</h2>
@@ -100,9 +108,13 @@ const ResultsDashboard = ({ results, insights }) => {
       <div className="insights-container">
         <h3>Seus Insights Personalizados</h3>
         <ul>
-          {insights.map((insight, index) => (
-            <li key={index}>{insight}</li>
-          ))}
+          {insights && insights.length > 0 ? (
+            insights.map((insight, index) => (
+              <li key={index}>{insight}</li>
+            ))
+          ) : (
+            <li>Nenhum insight disponível.</li>
+          )}
         </ul>
         
         <div className="cta-container">
@@ -126,6 +138,20 @@ const ResultsDashboard = ({ results, insights }) => {
             <span className="countdown">3 dias, 2 horas, 45 minutos</span>
           </p>
         </div>
+      </div>
+
+      <div className="whatsapp-group">
+        <h3>Participe do nosso grupo no WhatsApp!</h3>
+        <p>Para garantir sua vaga e receber os detalhes, clique abaixo e entre no grupo da live.</p>
+        
+        <a 
+          href={whatsappGroupLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="whatsapp-button"
+        >
+          Acessar o Grupo do WhatsApp
+        </a>
       </div>
     </div>
   );
