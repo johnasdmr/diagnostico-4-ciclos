@@ -1,3 +1,4 @@
+/* Estilos globais */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
@@ -32,14 +33,7 @@ body {
   line-height: 1.6;
 }
 
-.App {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  min-height: 100vh;
-}
-
-/* Estilos da Página de Introdução */
+/* Estilos para a página de introdução */
 .introduction-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -221,32 +215,150 @@ body {
   }
 }
 
-/* Outros Botões de Ação */
-.cta-button,
-.whatsapp-button {
-  display: inline-block;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-weight: 600;
+/* Estilos para a página de perguntas */
+.question-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.question-section {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.question-text {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.rating-container {
+  width: 100%;
   margin-top: 20px;
+}
+
+.rating-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: var(--grey-dark);
+}
+
+.rating-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating-option {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--grey-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 600;
   transition: var(--transition);
-  text-decoration: none;
+}
+
+.rating-option:hover {
+  background-color: var(--grey);
+}
+
+.rating-option.selected {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.prev-button, .next-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.prev-button {
+  background-color: var(--grey);
+  color: var(--text-color);
+}
+
+.prev-button:hover {
+  background-color: var(--grey-dark);
+  color: white;
+}
+
+.next-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.next-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.next-button:disabled {
+  background-color: var(--grey);
+  color: var(--grey-dark);
+  cursor: not-allowed;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
   font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 30px;
 }
 
-.cta-button:hover,
-.whatsapp-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+.submit-button:hover {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+  transform: translateY(-2px);
 }
 
-.whatsapp-button {
-  background-color: #25D366; /* WhatsApp green */
-}
+/* Responsividade para a página de perguntas */
+@media (max-width: 768px) {
+  .question-section {
+    padding: 20px;
+  }
 
-.whatsapp-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+  .question-text {
+    font-size: 1.2rem;
+  }
+
+  .rating-option {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navigation-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .prev-button, .next-button {
+    width: 100%;
+  }
 }
