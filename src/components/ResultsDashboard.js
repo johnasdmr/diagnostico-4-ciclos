@@ -125,7 +125,7 @@ const ResultsDashboard = ({ results, insights }) => {
           </p>
           
           <a 
-            href="https://metodo-gift.com.br/aula-master"
+            href="https://metodogift.com/"
             className="cta-button"
             target="_blank"
             rel="noopener noreferrer"
