@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Preparando seu Diagnóstico dos 4 Ciclos</title>
+  <script>
+    function getParameterByName(name) {
+      const url = window.location.href;
+      name = name.replace(/[\[\]]/g, '\\$&');
+      const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+      const results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    function saveLeadData() {
+      const leadData = {
+        name: getParameterByName('name'),
+        email: getParameterByName('email'),
+        phone: getParameterByName('phone')
+      };
+      
+      localStorage.setItem('leadData', JSON.stringify(leadData));
+      window.location.href = '/';
+    }
+
+    document.addEventListener('DOMContentLoaded', saveLeadData);
+  </script>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f8f5ff;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #FF2800;
+      margin-bottom: 20px;
+    }
+    .loader {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #FF6B00;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin: 30px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Preparando seu Diagnóstico dos 4 Ciclos</h1>
+    <p>Aguarde um momento enquanto preparamos sua experiência personalizada...</p>
+    <div class="loader"></div>
+  </div>
+</body>
+</html>
